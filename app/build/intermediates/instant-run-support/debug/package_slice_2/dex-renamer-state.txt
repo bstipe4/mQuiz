@@ -1,4 +1,4 @@
-#Sun Feb 11 01:38:31 CET 2018
-base.0=C\:\\Users\\Stipe\\Desktop\\Restore\\Glavno\\Kviz\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\22
+#Sun Feb 11 19:27:27 CET 2018
+base.0=C\:\\Users\\Stipe\\Desktop\\Restore\\Glavno\\Kviz\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\41
 path.0=classes.dex
 renamed.0=classes.dex

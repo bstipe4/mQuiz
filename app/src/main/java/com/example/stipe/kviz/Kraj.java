@@ -26,8 +26,7 @@ import com.facebook.share.model.SharePhotoContent;
 import com.facebook.share.widget.ShareButton;
 import com.facebook.share.widget.ShareDialog;
 
-import java.io.FileNotFoundException;
-import java.io.InputStream;
+
 
 public class Kraj extends AppCompatActivity {
 

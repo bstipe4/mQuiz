@@ -25,8 +25,8 @@ public class Question {
         OPTC="";
         OPTD="";
         ANSWER="";
-        total=1;
-        correct=1;
+        total=0;
+        correct=0;
     }
 
     public Question(String qUESTION, String oPTA, String oPTB, String oPTC,String oPTD,
@@ -38,8 +38,8 @@ public class Question {
         OPTC = oPTC;
         OPTD=oPTD;
         ANSWER = aNSWER;
-        this.total=1;
-        this.correct=1;
+        this.total=0;
+        this.correct=0;
     }
     public int getID()
     {

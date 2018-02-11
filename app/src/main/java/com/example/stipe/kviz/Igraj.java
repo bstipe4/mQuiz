@@ -69,27 +69,32 @@ public class Igraj extends AppCompatActivity {
     private void setQuestionView()
     {
 
-        percentage=(float)currentQ.getCorrect()/currentQ.getTotal();
-        if(percentage<=0.3){
+        if(currentQ.getTotal()==0){
 
-            textPercentage.setText("Tesko pitanje");
-
-        }
-        else if(percentage>0.3&&percentage<0.7){
-
-            textPercentage.setText("Srednje tesko pitanje");
-        }
-        else{
-
-            textPercentage.setText("Lagano pitanje");
+            textPercentage.setText("Nedefinirana tezina");
 
         }
-        txtQuestion.setText(currentQ.getQUESTION());
-        rda.setText(currentQ.getOPTA());
-        rdb.setText(currentQ.getOPTB());
-        rdc.setText(currentQ.getOPTC());
-        rdd.setText(currentQ.getOPTD());
-        txtQuestionNum.setText(String.valueOf(qid+1)+"/"+String.valueOf(Question.numOfQuestions));
+        else {
+            percentage = (float) currentQ.getCorrect() / currentQ.getTotal();
+            if (percentage <= 0.3) {
+
+                textPercentage.setText("Tesko pitanje");
+
+            } else if (percentage > 0.3 && percentage < 0.7) {
+
+                textPercentage.setText("Srednje tesko pitanje");
+            } else {
+
+                textPercentage.setText("Lagano pitanje");
+
+            }
+        }
+            txtQuestion.setText(currentQ.getQUESTION());
+            rda.setText(currentQ.getOPTA());
+            rdb.setText(currentQ.getOPTB());
+            rdc.setText(currentQ.getOPTC());
+            rdd.setText(currentQ.getOPTD());
+            txtQuestionNum.setText(String.valueOf(qid + 1) + "/" + String.valueOf(Question.numOfQuestions));
 
 
     }
