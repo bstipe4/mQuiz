@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.stipe.kviz.Admin"
+    android:orientation="vertical">
+
+    <EditText
+        android:id="@+id/editQuest"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="30dp"
+        android:ems="10"
+        android:hint="Unesite pitanje"
+        android:inputType="textPersonName" />
+
+    <EditText
+        android:id="@+id/editAns1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="10dp"
+        android:ems="10"
+        android:hint="Unesite odgovor-1"
+        android:inputType="textPersonName" />
+
+    <EditText
+        android:id="@+id/editAns2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="10dp"
+        android:ems="10"
+
+        android:hint="Unesite odgovor-2"
+        android:inputType="textPersonName" />
+
+    <EditText
+        android:id="@+id/editAns3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="10dp"
+        android:ems="10"
+
+        android:hint="Unesite odgovor-3"
+        android:inputType="textPersonName" />
+
+    <EditText
+        android:id="@+id/editAns4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="10dp"
+        android:ems="10"
+
+        android:hint="Unesite tocan odgovor"
+        android:inputType="textPersonName" />
+
+    <Button
+        android:id="@+id/bttnAdd"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="15dp"
+        android:text="Dodaj pitanje" />
+
+</LinearLayout>
