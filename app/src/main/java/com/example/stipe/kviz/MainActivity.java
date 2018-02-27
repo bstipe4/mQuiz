@@ -22,79 +22,70 @@ import java.security.NoSuchAlgorithmException;
 
 public class MainActivity extends AppCompatActivity {
 
-    Button bttnplay,bttnHigh,bttnAdmin;
+    Button bttnplay, bttnHigh, bttnAdmin;
     EditText username;
     SharedPreferences sharedPrefs;
-    String m_Text="";
+    String m_Text = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        sharedPrefs=this.getSharedPreferences("MyPreferences",MODE_PRIVATE);
+        sharedPrefs = this.getSharedPreferences("MyPreferences", MODE_PRIVATE);
 
-
-
-        bttnplay=(Button)findViewById(R.id.bttnPlay);
-        bttnHigh=(Button)findViewById(R.id.bttnHighscore);
-        username=(EditText)findViewById(R.id.editText);
-        bttnAdmin=(Button)findViewById(R.id.buttonAdmin);
+        bttnplay = (Button) findViewById(R.id.bttnPlay);
+        bttnHigh = (Button) findViewById(R.id.bttnHighscore);
+        username = (EditText) findViewById(R.id.editText);
+        bttnAdmin = (Button) findViewById(R.id.buttonAdmin);
 
         bttnplay.setOnClickListener(myListener);
         bttnAdmin.setOnClickListener(myListener);
         bttnHigh.setOnClickListener(myListener);
-
     }
 
-    private boolean chckUser(){
+    private boolean chckUser() {
 
-        if(username.getText().toString().equals("")){
+        if (username.getText().toString().equals("")) {
 
-            Toast.makeText(getApplicationContext(),"Molimo unesite korisnicko ime",Toast.LENGTH_LONG).show();
+            Toast.makeText(getApplicationContext(), "Molimo unesite korisnicko ime", Toast.LENGTH_LONG).show();
             return false;
 
-        }else {
+        } else {
             return true;
         }
     }
 
+    private View.OnClickListener myListener = new View.OnClickListener() {
+        @Override
+        public void onClick(View view) {
 
+            switch (view.getId()) {
 
-    private View.OnClickListener myListener=new View.OnClickListener() {
-    @Override
-    public void onClick(View view) {
+                case R.id.buttonAdmin:
+                    getDialog();
+                    break;
 
-        switch (view.getId()){
+                case R.id.bttnHighscore:
 
-            case R.id.buttonAdmin:
-                getDialog();
-                break;
+                    Intent myIntenthigh = new Intent(MainActivity.this, Lista.class);
+                    startActivity(myIntenthigh);
+                    break;
 
-            case R.id.bttnHighscore:
+                case R.id.bttnPlay:
+                    if (chckUser()) {
+                        Intent myIntentToPlay = new Intent(MainActivity.this, Igraj.class);
+                        sharedPrefs.edit().putString("username", username.getText().toString()).apply();
 
-                Intent myIntenthigh=new Intent(MainActivity.this,Lista.class);
-                startActivity(myIntenthigh);
-                break;
-
-            case R.id.bttnPlay:
-                if(chckUser()) {
-                    Intent myIntentToPlay = new Intent(MainActivity.this, Igraj.class);
-                    sharedPrefs.edit().putString("username",username.getText().toString()).apply();
-
-                    startActivity(myIntentToPlay);
-                }
-                break;
-            default:
-                break;
+                        startActivity(myIntentToPlay);
+                    }
+                    break;
+                default:
+                    break;
+            }
         }
+    };
 
-
-
-
-    }
-};
-
-    private void getDialog(){
+    private void getDialog() {
 
         final AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
         builder.setTitle("Upisite lozinku");
@@ -106,15 +97,14 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 m_Text = input.getText().toString();
-                if(m_Text.equals("f+2")){
+                if (m_Text.equals("f+2")) {
 
-                    Intent myIntentAdmin=new Intent(MainActivity.this,Admin.class);
+                    Intent myIntentAdmin = new Intent(MainActivity.this, Admin.class);
                     startActivity(myIntentAdmin);
 
-                }
-                else{
+                } else {
 
-                    Toast.makeText(getApplicationContext(),"Pogresna lozinka",Toast.LENGTH_LONG).show();
+                    Toast.makeText(getApplicationContext(), "Pogresna lozinka", Toast.LENGTH_LONG).show();
 
                 }
             }
@@ -127,6 +117,5 @@ public class MainActivity extends AppCompatActivity {
         });
 
         builder.show();
-
     }
 }

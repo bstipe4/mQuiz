@@ -11,9 +11,9 @@ public class Lista extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_highscore);
 
-        DbHelper helper=new DbHelper(getApplicationContext());
-        DataStorageUser.allUsersList=helper.getAllUsers();
-        ListView listaUsera=(ListView)findViewById(R.id.listview);
+        DbHelper helper = new DbHelper(getApplicationContext());
+        DataStorageUser.allUsersList = helper.getAllUsers();
+        ListView listaUsera = (ListView) findViewById(R.id.listview);
         listaUsera.setAdapter(new ListAdapter(getApplicationContext()));
 
     }

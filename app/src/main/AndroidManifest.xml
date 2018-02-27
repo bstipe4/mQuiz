@@ -30,7 +30,6 @@
         <activity android:name=".Admin" />
 
 
-        <activity android:name=".Facebook"></activity>
         <provider
             android:name="com.facebook.FacebookContentProvider"
             android:authorities="com.facebook.app.FacebookContentProvider147236425983920"

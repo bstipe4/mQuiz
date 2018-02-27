@@ -8,7 +8,7 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
-public class ListAdapter extends BaseAdapter{
+public class ListAdapter extends BaseAdapter {
 
     private Context context;
     private LayoutInflater layoutInflater;
@@ -33,13 +33,13 @@ public class ListAdapter extends BaseAdapter{
 
         TextView username = (TextView) view.findViewById(R.id.username);
         TextView score = (TextView) view.findViewById(R.id.score);
-        TextView num=(TextView)view.findViewById(R.id.num);
+        TextView num = (TextView) view.findViewById(R.id.num);
 
         Highscore currentUser = DataStorageUser.allUsersList.get(i);
 
         username.setText(String.valueOf(currentUser.getUsername()));
         score.setText(String.valueOf(currentUser.getScore()));
-        num.setText(String.valueOf(i+1));
+        num.setText(String.valueOf(i + 1));
 
         return view;
     }
